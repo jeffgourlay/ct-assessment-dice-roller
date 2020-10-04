@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Dice Roller Assessment</title>
+    <link rel="stylesheet" href="assets/stylesheets/style.css">
+</head>
+<body>
+    <div class='header-div'>
+        <h1>Welcome to the Dice Roller</h1>
+        <h3>You can specify how many dice to roll (1-6)</h3>
+        <h3>and how many faces each die will have (6-20)</h3>
+    </div>
+    <div class=controls-div>
+        <label for='numdice'>How many dice do you want to roll?</label><br>
+        <input id='numdice' placeholder='How many dice'><br>
+        <label for='numface'>How many faces should each die have?</label><br>
+        <input id='numface' placeholder='How many faces'><br>
+        <button type='button' id='roll-button'>Roll</button><br>
+        Roll total: <span id='dice-total'></span><br>
+        <button type='button' id='show-all-button'>Show All Rolls</button><br><br>
+    </div>
+    <div class='dice-div'>
+        <ol id='dice-list'>
+
+        </ol>
+        <button type='button' id='reset-button'>Reset</button>
+    </div>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>
