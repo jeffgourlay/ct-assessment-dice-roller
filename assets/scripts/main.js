@@ -25,12 +25,10 @@ let rollButton = document.querySelector('#roll-button');
 let showRollButton = document.querySelector('#show-all-button');
 let resetButton = document.querySelector('#reset-button');
 
-console.log("Hi");
 showRollButton.disabled = true;
 /*
 Event handlers
 */
-
 rollButton.addEventListener("click", function() {
     if (Number(numDiceInput.value) < 1 || Number(numDiceInput.value) > 6) {
         alert("Please choose a number of dice from 1 through 6");
@@ -45,9 +43,7 @@ rollButton.addEventListener("click", function() {
     else {
         for (diceLoop = 0; diceLoop < numDiceInput.value; diceLoop++) {
             rollValue = Math.floor(Math.random() * numFaceInput.value) + 1;
-            console.log(rollValue + ", " + (Math.floor(Math.random() * numFaceInput.value) + 1));
             dieRolls.push(rollValue);
-            console.log(diceLoop + ", " + dieRolls[diceLoop]);
             diceTotal += rollValue;
         }
         document.getElementById("dice-total").innerHTML = diceTotal;
@@ -66,25 +62,16 @@ showRollButton.addEventListener('click', function() {
 
 resetButton.addEventListener('click', function() {
     diceLoop = dieRolls.length - 1;
+    console.log(dieRolls.length - 1);
     while (diceLoop >= 0) {
-        console.log(diceLoop);
-        console.log("Removing element #" + diceLoop + "with value of " + dieRolls[diceLoop]);
         dieRolls.pop();
-//        diceList.removeChild(diceList.childNodes[0]);
-        console.log(diceList.childNodes);
         diceLoop--;
     }
-/*
-    for (diceLoop = dieRolls.length - 1; diceLoop => 0; diceLoop--)  {
-        console.log(diceLoop);
-        dieRolls.pop();
-        document.getElementById('dice-list').removeChild(document.getElementById('dice-list').childNodes[diceLoop]);
-        console.log("Removed element #" + diceLoop);
-    }
-    */
+
     diceList.innerHTML = "";
     numDiceInput.value = '';
     numFaceInput.value = '';
+    diceTotal = 0;
     showRollButton.disabled = true;
     document.getElementById("dice-total").innerHTML = "";
     console.table(dieRolls);
