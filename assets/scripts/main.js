@@ -55,6 +55,8 @@ showRollButton.addEventListener('click', function() {
     for (displayLoop = 0; displayLoop < dieRolls.length; displayLoop++) {
         diceNode = document.createElement("LI");
         diceTextnode = document.createTextNode(dieRolls[displayLoop]);
+        console.log(dieRolls[displayLoop] + " - end");
+        console.log(diceTextnode.toString() + "- end");
         diceNode.appendChild(diceTextnode);
         diceList.appendChild(diceNode);
     }
@@ -74,5 +76,4 @@ resetButton.addEventListener('click', function() {
     diceTotal = 0;
     showRollButton.disabled = true;
     document.getElementById("dice-total").innerHTML = "";
-    console.table(dieRolls);
 })
